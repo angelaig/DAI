@@ -1,0 +1,65 @@
+{%extends "layout.html" %}
+{%block title %} practica 8 {% endblock %}
+ <!-------------------MAPA-->
+        	
+
+
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+<style>
+html, body {
+height: 100%;
+margin: 0;
+}
+#map {
+width: 600px;
+height: 400px;
+}
+</style>
+
+{%block body %}
+
+
+<center>
+
+<div id='map'></div>
+<p>El tipo de pokemon que buscamos es <strong id="typeSearch"></strong></p>
+<p id="searchtable">
+<input type="text" id="search" value="Water">
+
+
+<br>
+<br>
+<button class="btn btn-danger btn-sm"  onclick="blackmode()">Black mode </button>
+<table  id ="contenido" class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Tipo</th>
+            <th>Borrar</th>
+            <th>X</th>
+            <th>Y</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+</table>
+</p>
+</center>
+
+
+
+
+
+
+{% endblock %}
+

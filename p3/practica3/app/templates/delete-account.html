@@ -1,0 +1,22 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete account 
+{% endblock %}
+
+{% block body %}
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method=post>
+    <dl>
+      <dt>Current username:
+      <dd><input type=text name=username value="{{
+          request.form.username }}">
+    <dt>Password:
+    <dd><input type=password name=password>
+  </dl>
+  <p><input type=submit value='Delete'>
+  </form>
+{% endblock %}

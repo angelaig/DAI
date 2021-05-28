@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="col-md-4 col-md-offset-4">
+        <form  method="POST">
+            <dl>
+                <dt>Id pokemon:
+                    <dd><input type=int name='id' >
+                <dt>Nuevo nombre:
+                <dd><input type=text name='name'>
+            </dl>
+              <p><input type=submit value=Cambiar >
+        </form>
+    </div>
+{% endblock %}

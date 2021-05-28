@@ -1,0 +1,69 @@
+{%extends "base.html" %}
+
+{%block title %}  {% endblock %}
+
+{%block titulo %}  {% endblock %}
+{%block contenido %}
+
+<div class="container text-center pt-5">
+    <h1>Lista de libros</h1>
+    {% if user.is_authenticated %}
+    {% if request.user.is_staff %}
+      <a class="btn btn-success btn-lg" href="crearLibro">Crear libro</a>
+    {% endif %}
+    {% endif %}
+      <br>
+      <br>
+      <table  class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Titulo</th>
+            <th>Autor</th>
+            
+          </tr>
+        </thead><tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.titulo}}</td>
+            <td>{{ item.autor }}</td>
+            
+            {% if user.is_authenticated %}
+            {% if request.user.is_staff %}
+            <td> 
+             
+              <center>
+              
+                 {% csrf_token %}
+                 
+                 <a class="btn btn-info btn-sm" href="/editarLibro/{{ item.pk }}">Editar</a>
+                
+               
+              </center>
+              
+            </td>
+            {% endif %}
+            {% endif %}
+            {% if user.is_authenticated %}
+            {% if request.user.is_staff %}
+            <td> 
+       
+              <center>
+                {% csrf_token %}
+               
+                 <a class="btn btn-danger btn-sm" href="/borrarLibro/{{ item.pk }}">Borrar</a>
+                 
+                
+              </center>
+             
+            </td>
+            {% endif %}
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+{% endblock %}

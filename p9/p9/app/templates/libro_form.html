@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+**people/person_form.html**
+
+{% block content %}
+<!--
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.titulo|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.autor|as_crispy_field }}
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Save libro</button>
+  </form>
+-->
+{% load crispy_forms_tags %}
+<!--
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ crispy form }}
+</form>
+-->
+
+<form method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Send message">
+</form>
+{% endblock %}

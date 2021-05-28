@@ -1,0 +1,30 @@
+
+{%extends "base.html" %}
+
+{%block title %} Biblioteca {% endblock %}
+
+{%block titulo %}  {% endblock %}
+{%block formulario %}
+
+<body>
+  <div class="container text-center pt-5">
+    <h1>Editar libro</h1>
+    <p>Introduce los datos del libro</p>
+    <div class='jumbotron'>
+      <form action="{% url 'editarLibro' item_id=item_id %}" method="post">
+        {% csrf_token %}
+        {% for field in register_form %}
+        <div class='form-group'>
+          <label for="{{ field.name }}">{{ field.label }}</label>
+          {{ field }}
+        </div>
+        {% endfor %}
+        <br>
+        <center><button type="submit" class="btn btn-success btn-lg">Editar libro</button></center>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{%extends "layout.html" %}
+{%block title %} practica8 {% endblock %}
+
+
+{%block body %}
+
+<center>
+
+
+
+<p>Tipo de pokemon a buscar <strong id="searchTipo"></strong></p>
+<p id="busquedaTabla">
+
+  <input type="text" id="buscar" value="Water">
+  <br>
+  <button class="btn btn-primary btn-sm"  onclick="blackmode()">Black mode</button>
+<table  id ="contenido" class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Tipo</th>
+            <th>Borrar</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+</table>
+</p>
+</center>
+
+{% endblock %}
+

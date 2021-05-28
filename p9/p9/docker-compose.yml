@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 80:80
+      # directorios para el archivo de configuración y archivos del static
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./web/static:/var/www/static
+    depends_on:
+      - web
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    restart: always
+    #command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn project.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

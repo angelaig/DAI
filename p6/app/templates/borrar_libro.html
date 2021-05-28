@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %} {%block title %} Libros {% endblock %} {% block formulario %}
+
+<form action="{% url 'borrarLibro' instance.pk %}" method="POST" class="my-5">{% csrf_token %}
+    <div class="container-fluid">
+        <p> ¿Seguro que quieres eliminar el libro {{ instance }}? </p>
+        <div class="row mb-2">
+            <div class="col-md-auto my-2">
+                <button type="submit" class="btn btn-danger text-center" name="eliminar">Confirmar</button>
+            </div>
+
+            <div class="col-md-auto my-2">
+                <a class="btn btn btn-dark text-center " href="{% url 'libros' %} ">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</form>

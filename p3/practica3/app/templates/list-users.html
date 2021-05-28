@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+	
+ 	<h2>Lista de usuarios actuales del sistema</h2>
+     {% for member in Users: %}
+        <li>{{member}}</li>
+    {% endfor %}
+{% endblock %}

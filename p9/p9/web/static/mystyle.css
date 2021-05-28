@@ -1,0 +1,18 @@
+.px-2 {
+  padding-left: ($spacer * .5) !important;
+  padding-right: ($spacer * .5) !important;
+}
+
+.ml-1 {
+  margin-left: 0 !important;
+}
+
+.footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       background-color: DarkSalmon;
+       color: white;
+       text-align: center;
+}

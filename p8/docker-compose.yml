@@ -1,0 +1,26 @@
+version: '3.7'
+services: 
+  flask:
+    build: .
+    depends_on:
+      - mongo
+    ports:
+      - 5000:5000
+    volumes:
+      - ./app:/app
+    working_dir: /app
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - ./dump:/dump              # los datos de prueba
+      - ./datos_db:/data/db 
+
+  mongo-express:
+    image: mongo-express:latest 
+    ports: 
+      - 8081:8081
+    links:
+        - mongo

@@ -1,0 +1,19 @@
+ 
+{% extends "layout.html" %}
+
+{% block title %}
+    Ejercicio 2 - Ordenar
+{% endblock %}
+
+{% block body %}
+    <h1>Ordenar arrays.</h1>
+    <p><b>original:</b> {{original}}
+       <br><b>  BubbleSort: </b> {{burbuja}}
+       <br><b>InsertionSort: </b> {{insercion}}
+       <br><b>SelectionSort: </b> {{seleccion}}
+       <br><b>Tiempo  bubble sort: </b> {{tiempo_burbuja}} segundos.
+       <br><b>Tiempo  insertion sort: </b> {{tiempo_insercion}} segundos.
+       <br><b>Tiempo  seleccion sort: </b> {{tiempo_seleccion}} segundos.
+
+    </p>
+{% endblock %}

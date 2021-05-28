@@ -1,0 +1,25 @@
+ {% extends "layout.html" %}
+
+{% block body %}
+
+
+
+    {% if name is defined %}
+        {% if img is defined %}
+            <div class="col-md-6 col-md-offset-4">
+                <h1>{{ name }}</h1>
+                <br/>
+                <img src="{{ img }}"/>
+            </div>
+        {% else %}
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='img/pikachu.png') }}" style="width:800px;height:500px;"/>
+            </div>
+        {% endif %}
+    {% else %}
+  
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='img/pokemon.webp') }}"style="width:800px;height:500px;"/>
+        </div>
+    {% endif%}
+{% endblock %}

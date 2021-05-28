@@ -1,0 +1,62 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: black;
+}
+
+nav{position:fixed; top:10; left:0;}
+
+
+body {
+  padding-top: 10px;
+}
+
+
+.portfolio {
+  background-color: #bcd39c;
+  width: 100%;
+  height: 100%;
+  padding-top:10px;
+  margin-top:100px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+.navbar-nav .btn {
+  margin-top: 8px;
+}
+
+
+
+/*menú vertical*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/
+nav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+ width: 100%; /* Full width */
+
+}
+main {
+  margin-top: 1000px; /* Add a top margin to avoid content overlay */
+}

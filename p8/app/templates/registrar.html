@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}
+
+
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="col-md-6 col-md-offset-2">
+        <form  method="POST">
+          
+            <dl>
+
+                <dt>Nombre:
+                <dd><input type=text name='name'>
+                <dt>Imagen:
+                <dd><input type=text name='img'>
+                <dt>Tipo:
+                <dd><input type=text name='type'>
+                <dt>Altura:
+                <dd><input type=text name='height'>
+                <dt>Peso :
+                <dd><input type=text name='weight'>
+                <dt>Candy:
+                <dd><input type=text name='candy'>
+        
+        
+            </dl>
+              <p><input type=submit value='Registar' >
+        </form>
+    </div>
+{% endblock %}
+<!--
+id	num	name	img	type	height	weight	candy	candy_count	egg	spawn_chance	avg_spawns	spawn_time	multipliers	weaknesses	next_evolution	prev_evolution
+
+   name= request.form.get('name')
+        img = request.form.get('img')
+        type_ = request.form.get('type')
+        height = request.form.get('height')
+        weight = request.form.get('weight')
+
+
+
+
+
+-->

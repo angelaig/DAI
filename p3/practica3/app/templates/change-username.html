@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  
+{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+   
+  {% endif %}
+
+  <form method=post>
+    <dl>
+      <dt>Current username:
+      <dd><input type=text name=username value="{{
+          request.form.username }}">
+    <dt>New user name
+    <dd><input type=text name=username2 value="{{
+        request.form.username2 }}">
+    <dt>Password:
+    <dd><input type=password name=password>
+  </dl>
+  <p><input type=submit value='New username'>
+  </form>
+{% endblock %}
+

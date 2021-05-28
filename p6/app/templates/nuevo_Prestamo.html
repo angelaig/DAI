@@ -1,0 +1,25 @@
+{%extends "base.html" %}
+
+{%block title %} Prestamos {% endblock %}
+{% load crispy_forms_tags %}
+{%block formulario %}
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    <p class=error><strong>Error:</strong> {{ error }}
+</div> {% endif %}
+
+<body>
+  <div class="container text-center pt-5">
+    <h1>Registro nuevo Prestamo</h1>
+    <p>Introduce la información del Prestamo</p>
+    <div class='jumbotron'>
+      <form action="{% url 'crearPrestamo' %}" method="post">
+        {% csrf_token %} {{ form|crispy }}
+        <br>
+        <center><button type="submit" class="btn btn-success btn-lg">Guardar</button></center>
+      </form>
+    </div>
+  </div>
+
+</body>
+{% endblock %}

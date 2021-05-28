@@ -1,0 +1,49 @@
+{%extends "base.html" %}
+
+{%block title %} Prestamos {% endblock %}
+
+{%block titulo %}  {% endblock %}
+{%block contenido %}
+
+<div class="container text-center pt-5">
+    <h1>Lista de Prestamos</h1>
+      <a class="btn btn-success btn-lg" href="crearPrestamo">Añadir Prestamo</a>
+      <br>
+      <br>
+      <table  class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Libro</th>
+            <th>Fecha</th>
+            <th>Usuario</th>
+            
+          </tr>
+        </thead><tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.libro }}</td>
+            <td>{{ item.fecha }}</td>
+            <td>{{ item.usuario }}</td>
+          
+            <td> 
+              <center>
+                 {% csrf_token %}
+                  <a class="btn btn-info btn-sm" href="/editarPrestamo/{{ item.pk }}">Editar</a>
+              </center>
+            </td>
+            <td> 
+              <center>
+                {% csrf_token %}
+                 <a class="btn btn-danger btn-sm" href="/borrarPrestamo/{{ item.pk }}">Borrar</a>
+              </center>
+            </td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+{% endblock %}
